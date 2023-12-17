@@ -1,0 +1,283 @@
+alex@alex-mashin~vb$ cat > Домашние_животные/////////////////////////////////////////////////////////
+-Кошка Муся
+-Кот Кузя
+-Хомяк Максим
+-Собака Кусака
+
+
+alex@alex-mashin~vb$ cat  Домашние_животные/////////////////////////////////////////////////////////
+-Кошка Муся
+-Кот Кузя
+-Хомяк Максим
+-Собака Кусака
+
+alex@alex-mashin~vb$ cat > Вьючные_животные
+-Конь Булат
+-Лошадь Звезда
+-Верблюд Саша
+-Осел Малыш
+
+alex@alex-mashin~vb$ mkdir Itogi
+
+alex@alex-mashin~vb$ ll
+итого 5
+drwxrwx---  1 root vboxsf    0 дек  9  2023 .
+drwxr-x--- 15 alex alex   4096 дек  9 1539 ..
+drwxrwx---  1 root vboxsf    0 дек  9  2023 Itogi
+-rwxrwx---  1 root vboxsf  118 дек  9 1552 Вьючные_животные
+-rwxrwx---  1 root vboxsf   92 дек  9 1546 Домашние_животные
+
+alex@alex-mashin~vb$ mv Вьючные_животные Itogi
+
+alex@alex-mashin~vb$ mv Домашние_животные Itogi
+
+alex@alex-mashin~vb$ ll
+итого 4
+drwxrwx---  1 root vboxsf    0 дек  9  2023 .
+drwxr-x--- 15 alex alex   4096 дек  9 1539 ..
+drwxrwx---  1 root vboxsf    0 дек  9  2023 Itogi
+
+alex@alex-mashin~vb$ cd Itogi
+
+alex@alex-mashin~vbItogi$ ll
+итого 1
+drwxrwx--- 1 root vboxsf   0 дек  9  2023 .
+drwxrwx--- 1 root vboxsf   0 дек  9  2023 ..
+-rwxrwx--- 1 root vboxsf 118 дек  9 1552 Вьючные_животные
+-rwxrwx--- 1 root vboxsf  92 дек  9 1546 Домашние_животные
+
+alex@alex-mashin:~/vb/Itogi$ ll
+итого 21
+drwxrwx--- 1 root vboxsf     0 дек  9 16:09 ./
+drwxrwx--- 1 root vboxsf     0 дек  9 19:02 ../
+-rwxrwx--- 1 root vboxsf 17658 дек 10 14:02 pf.txt*
+-rwxrwx--- 1 root vboxsf   118 дек  9 15:52 Вьючные_животные*
+-rwxrwx--- 1 root vboxsf    92 дек  9 15:46 Домашние_животные*
+
+alex@alex-mashin:~/vb/Itogi$ cat Вьючные_животные Домашние_животные > Друзья_человека
+
+
+alex@alex-mashin:~/vb/Itogi$ rm Вьючные_животные Домашние_животные
+
+alex@alex-mashin:~/vb/Itogi$ ll
+итого 25
+drwxrwx--- 1 root vboxsf  4096 дек 12 19:51 ./
+drwxrwx--- 1 root vboxsf     0 дек  9 19:02 ../
+-rwxrwx--- 1 root vboxsf 17658 дек 10 14:02 pf.txt*
+-rwxrwx--- 1 root vboxsf   210 дек 12 19:47 Друзья_человека*
+
+
+alex@alex-mashin:~/vb$ sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 186969 файлов и каталогов.)
+Подготовка к распаковке mysql-apt-config_0.8.28-1_all.deb …
+Распаковывается mysql-apt-config (0.8.28-1) …
+Настраивается пакет mysql-apt-config (0.8.28-1) …
+
+alex@alex-mashin:~/vb$ sudo apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Пол:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Пол:5 http://repo.mysql.com/apt/ubuntu jammy InRelease [20,2 kB]
+Пол:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 Sources [963 B]
+Пол:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [565 B]
+Пол:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [565 B]
+Пол:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 Packages [12,6 kB]
+Пол:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [7 994 B]
+Пол:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [457 B]
+Получено 273 kB за 3с (99,5 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Может быть обновлено 134 пакета. Запустите «apt list --upgradable» для их показа.
+alex@alex-mashin:~/vb$ sudo apt install mysql-server
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core
+  mysql-community-client-plugins mysql-community-server mysql-community-server-core
+Следующие НОВЫЕ пакеты будут установлены:
+  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core
+  mysql-community-client-plugins mysql-community-server mysql-community-server-core mysql-server
+Обновлено 0 пакетов, установлено 13 новых пакетов, для удаления отмечено 0 пакетов, и 134 пакетов не обновлено.
+Необходимо скачать 37,8 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 273 MB.
+Хотите продолжить? [Д/н] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libaio1 amd64 0.3.112-13build1 [7 176 B]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4 850 B]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+Пол:5 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-common amd64 8.0.35-1ubuntu22.04 [67,9 kB]
+Пол:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-plugins amd64 8.0.35-1ubuntu22.04 [1 443 kB]
+Пол:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client-core amd64 8.0.35-1ubuntu22.04 [2 120 kB]
+Пол:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-client amd64 8.0.35-1ubuntu22.04 [2 195 kB]
+Пол:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-client amd64 8.0.35-1ubuntu22.04 [66,6 kB]
+Пол:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server-core amd64 8.0.35-1ubuntu22.04 [24,8 MB]
+Пол:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-community-server amd64 8.0.35-1ubuntu22.04 [78,3 kB]
+Пол:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.0 amd64 mysql-server amd64 8.0.35-1ubuntu22.04 [66,6 kB]
+Пол:13 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]
+Получено 37,8 MB за 6с (6 653 kB/s)
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета mysql-common.
+(Чтение базы данных … на данный момент установлено 186974 файла и каталога.)
+Подготовка к распаковке …/00-mysql-common_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-common (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mysql-community-client-plugins.
+Подготовка к распаковке …/01-mysql-community-client-plugins_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-community-client-plugins (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mysql-community-client-core.
+Подготовка к распаковке …/02-mysql-community-client-core_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-community-client-core (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mysql-community-client.
+Подготовка к распаковке …/03-mysql-community-client_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-community-client (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mysql-client.
+Подготовка к распаковке …/04-mysql-client_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-client (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета libaio1:amd64.
+Подготовка к распаковке …/05-libaio1_0.3.112-13build1_amd64.deb …
+Распаковывается libaio1:amd64 (0.3.112-13build1) …
+Выбор ранее не выбранного пакета libmecab2:amd64.
+Подготовка к распаковке …/06-libmecab2_0.996-14build9_amd64.deb …
+Распаковывается libmecab2:amd64 (0.996-14build9) …
+Выбор ранее не выбранного пакета mysql-community-server-core.
+Подготовка к распаковке …/07-mysql-community-server-core_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-community-server-core (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mysql-community-server.
+Подготовка к распаковке …/08-mysql-community-server_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-community-server (8.0.35-1ubuntu22.04) …
+Выбор ранее не выбранного пакета mecab-utils.
+Подготовка к распаковке …/09-mecab-utils_0.996-14build9_amd64.deb …
+Распаковывается mecab-utils (0.996-14build9) …
+Выбор ранее не выбранного пакета mecab-ipadic.
+Подготовка к распаковке …/10-mecab-ipadic_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mecab-ipadic-utf8.
+Подготовка к распаковке …/11-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mysql-server.
+Подготовка к распаковке …/12-mysql-server_8.0.35-1ubuntu22.04_amd64.deb …
+Распаковывается mysql-server (8.0.35-1ubuntu22.04) …
+Настраивается пакет libmecab2:amd64 (0.996-14build9) …
+Настраивается пакет mysql-common (8.0.35-1ubuntu22.04) …
+update-alternatives: используется /etc/mysql/my.cnf.fallback для предоставления /etc/mysql/my.cnf (my.cnf) в автоматическом режиме
+Настраивается пакет mecab-utils (0.996-14build9) …
+Настраивается пакет mysql-community-client-plugins (8.0.35-1ubuntu22.04) …
+Настраивается пакет libaio1:amd64 (0.3.112-13build1) …
+Настраивается пакет mecab-ipadic (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################|
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+emitting double-array: 100% |###########################################|
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################|
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic для предоставления /var/lib/mecab/dic/debian (mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client-core (8.0.35-1ubuntu22.04) …
+Настраивается пакет mysql-community-server-core (8.0.35-1ubuntu22.04) …
+Настраивается пакет mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################|
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+emitting double-array: 100% |###########################################|
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################|
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic-utf8 для предоставления /var/lib/mecab/dic/debian (mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client (8.0.35-1ubuntu22.04) …
+Настраивается пакет mysql-client (8.0.35-1ubuntu22.04) …
+Настраивается пакет mysql-community-server (8.0.35-1ubuntu22.04) …
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/mysql/my.cnf (my.cnf) в автоматическом режиме
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+Настраивается пакет mysql-server (8.0.35-1ubuntu22.04) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.1) …
+alex@alex-mashin:~/vb$ systemctl mysql-server
+Unknown command verb mysql-server.
+alex@alex-mashin:~/vb$ systemctl status mysql-server
+Unit mysql-server.service could not be found.
+alex@alex-mashin:~/vb$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-12-09 19:07:48 +04; 1min 58s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 4716 (mysqld)
+     Status: "Server is operational"
+      Tasks: 37 (limit: 6861)
+     Memory: 364.2M
+        CPU: 1.037s
+     CGroup: /system.slice/mysql.service
+             └─4716 /usr/sbin/mysqld
+
+дек 09 19:07:47 alex-mashin systemd[1]: Starting MySQL Community Server...
+дек 09 19:07:48 alex-mashin systemd[1]: Started MySQL Community Server.
+alex@alex-mashin:~/vb$ sudo dpkg -r mysql-server
+(Чтение базы данных … на данный момент установлено 187334 файла и каталога.)
+Удаляется mysql-server (8.0.35-1ubuntu22.04) …
+alex@alex-mashin:~/vb$ sudo dpkg -r mysql-apt-config
+dpkg: предупреждение: игнорируется запрос на удаление пакета mysql-apt-config, от которого
+ сохранились только файлы настройки; чтобы удалить и файлы
+ настройки, используйте --purge
+
+
+
+
