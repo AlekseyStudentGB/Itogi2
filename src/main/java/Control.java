@@ -12,18 +12,21 @@ public class Control {
             2. Добавить обитателя
             3. Oбучить живoтное
             4. Посмотреть команды животного
-            5. дать команду животному 
+            6. Выйти
            """;
     public static void main(String[] args) {
+        Couter couter = new Couter();
+
+
         Scanner scanner = new Scanner(System.in);
         while (command != 6) {
-
+            System.out.println("Количество животных  в питомнике : " + couter.getIndex() );
             System.out.println(menu);
             System.out.println("Введите команду меню ");
             command = Integer.parseInt(scanner.nextLine());
             switch (command) {
                 case 1 -> showListAnimal();
-                case 2 -> addAnimal(animalsList);
+                case 2 -> addAnimal(animalsList,couter);
                 case 3 -> addSkill(animalsList);
                 case 4 -> showSkill(animalsList);
                 case 6 -> System.out.println("Bye!");
@@ -37,7 +40,7 @@ public class Control {
 
     }
 
-    public static void addAnimal(ArrayList<Animals> animalsList){
+    public static void addAnimal(ArrayList<Animals> animalsList, Couter couter){
         Scanner scanner = new Scanner(System.in);
         System.out.println("В питомник можно поселить следующих животных:" +
                 "\n 1. кошка " +
@@ -54,6 +57,10 @@ public class Control {
         switch (command) {
             case 1 -> animalsList.add(new Cat(name, birthday));
             case 2 -> animalsList.add(new Horse(name, birthday));
+
+        }
+        if (!name.equals("") & !birthday.equals("")){
+            couter.addIndex();
         }
     }
     public static void showListAnimal(){
